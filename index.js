@@ -62,7 +62,7 @@ const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
 function displayMovements(movements) {
-    containerMovements.innerHTML=""
+  containerMovements.innerHTML = "";
   movements.forEach((movement, i) => {
     const type = movement > 0 ? "deposit" : "withdrawal";
     const html = `
@@ -77,3 +77,41 @@ function displayMovements(movements) {
 }
 displayMovements(account1.movements);
 
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LECTURES
+
+// const currencies = new Map([
+//   ["USD", "United States dollar"],
+//   ["EUR", "Euro"],
+//   ["GBP", "Pound sterling"],
+// ]);
+
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// movements.forEach((movement,i) => {
+//   if (movement > 0) {
+//     console.log(`Movement${i}:You deposites ${movement} `);
+//   } else {
+//     console.log(`Movement${i}:You withdrew ${Math.abs(movement)}`);
+//   }
+// });
+
+const eurToUsd = 1.1;
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movementsUSD = movements.map((movement) => movement * eurToUsd);
+
+const movementsUSDfor = [];
+for (const mov of movements) {
+  movementsUSDfor.push(mov * eurToUsd);
+}
+console.log(movementsUSDfor);
+
+movements.map((mov, i) => {
+  `Movement ${i + 1}:You ${mov > 0 ? "deposited" : "withdrew"} ${Math.abs(
+    mov
+  )}`;
+
+
+});
