@@ -126,4 +126,7 @@ function createUserNames(accounts) {
   });
 }
 createUserNames(accounts);
-console.log(accounts)
+console.log(accounts);
+
+const withdrawals = movements.filter((movement) => movement < 0);
+console.log(withdrawals);
