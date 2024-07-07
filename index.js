@@ -130,3 +130,15 @@ console.log(accounts);
 
 const withdrawals = movements.filter((movement) => movement < 0);
 console.log(withdrawals);
+
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, cur) => {
+    return acc + cur;
+  }, 0);
+    labelBalance.textContent=`${balance} EUR`
+};
+
+calcDisplayBalance(account1.movements)
+
+
+
