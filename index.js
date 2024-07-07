@@ -112,6 +112,18 @@ movements.map((mov, i) => {
   `Movement ${i + 1}:You ${mov > 0 ? "deposited" : "withdrew"} ${Math.abs(
     mov
   )}`;
-
-
 });
+
+function createUserNames(accounts) {
+  accounts.forEach((account) => {
+    account.username = account.owner
+      .toLowerCase()
+      .split(" ")
+      .map((name) => {
+        return name[0];
+      })
+      .join("");
+  });
+}
+createUserNames(accounts);
+console.log(accounts)
